@@ -1,6 +1,11 @@
 require_relative 'bike'
 
+
 class DockingStation
+
+
+DEFAULT_CAPACITY = 20
+
 
   attr_accessor :bike
 
@@ -21,7 +26,7 @@ class DockingStation
 
   private
   def full?
-  	@bikes.count >= 20 ? true : false
+  	@bikes.count >= DEFAULT_CAPACITY
   end
 
   private
