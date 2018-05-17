@@ -2,6 +2,10 @@ require 'docking_station'
 
 describe DockingStation do
 
+  it 'has a default capacity' do
+    expect(subject.capacity).to eq DockingStation::DEFAULT_CAPACITY
+  end
+
   it { is_expected.to respond_to(:dock).with(1).argument }
 
   it { is_expected.to respond_to :bike }
@@ -18,7 +22,7 @@ describe DockingStation do
   end
 
 
-  describe '#dock' do
+  describe 'initialization' do
     it 'raises an error when full' do
       # 20.times { subject.dock Bike.new }
       DockingStation::DEFAULT_CAPACITY.times { subject.dock Bike.new }
