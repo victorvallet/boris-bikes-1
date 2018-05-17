@@ -16,6 +16,7 @@ DEFAULT_CAPACITY = 20
 
   def release_bike
     fail 'No bikes available' if empty?
+    raise 'This bike is broken' if @bikes.last.broken?
     @bikes.pop
   end
 
