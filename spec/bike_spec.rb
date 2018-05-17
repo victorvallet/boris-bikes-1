@@ -7,12 +7,8 @@ describe Bike do
   	end
 
   	it 'the bike can be reported as broken, so do that maybe??' do
-  		subject.report_broken
+  		subject.report_broken(true)
   		expect(subject).to be_broken
   	end
-
-  # it 'get a bike' do
-  #   expect(subject).to be_working
-  # end
 
 end
