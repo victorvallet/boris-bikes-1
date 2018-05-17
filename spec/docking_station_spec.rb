@@ -8,19 +8,18 @@ describe DockingStation do
 
   it { is_expected.to respond_to(:dock).with(1).argument }
 
-  it { is_expected.to respond_to :bike }
+  it { is_expected.to respond_to :bikes }
 
-  it 'docks something' do
+  it 'docks returning bikes (broken or not)' do
     bike = Bike.new
     expect(subject.dock(bike).last).to eq bike
   end
 
-  it 'returns docked bikes' do
+  it 'releases docked bikes' do
     bike = Bike.new
     subject.dock(bike)
     expect(subject.release_bike).to eq bike
   end
-
 
   describe 'initialization' do
     it 'raises an error when full' do
